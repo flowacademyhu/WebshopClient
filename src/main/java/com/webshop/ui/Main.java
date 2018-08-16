@@ -8,6 +8,9 @@ public class Main extends JFrame {
         EventQueue.invokeLater(()-> {
             Main main = new Main();
             main.setVisible(true);
+            LoginUi loginUi = new LoginUi();
+            RegistrationUi registrationUi = new RegistrationUi();
+
         });
     }
 
