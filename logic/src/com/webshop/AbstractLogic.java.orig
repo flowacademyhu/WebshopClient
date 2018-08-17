@@ -1,0 +1,48 @@
+package com.webshop;
+
+import com.webshop.factory.GatewayFactory;
+import com.webshop.factory.PluginFactory;
+import com.webshop.interactor.SessionManager;
+
+public abstract class AbstractLogic {
+<<<<<<< HEAD
+    // region Factory
+
+=======
+>>>>>>> 16d89d7e37de0d0c5c63a36f9895028e393156bf
+    private PluginFactory pluginFactory;
+    private GatewayFactory gatewayFactory;
+
+    private GatewayFactory getGatewayFactory() {
+        if (gatewayFactory == null) {
+            gatewayFactory = createGatewayFactory();
+        }
+        return gatewayFactory;
+    }
+
+    protected abstract GatewayFactory createGatewayFactory();
+
+    public PluginFactory getPluginFactory() {
+        if (pluginFactory == null) {
+            pluginFactory = createPluginFactory();
+        }
+        return pluginFactory;
+    }
+
+    protected abstract PluginFactory createPluginFactory();
+
+<<<<<<< HEAD
+    // endregion
+=======
+
+>>>>>>> 16d89d7e37de0d0c5c63a36f9895028e393156bf
+
+    private SessionManager sessionManager;
+
+    public SessionManager getSessionManager() {
+        if (sessionManager == null) {
+            sessionManager = new SessionManager(getGatewayFactory().getAuthenticationGateway());
+        }
+        return sessionManager;
+    }
+}
